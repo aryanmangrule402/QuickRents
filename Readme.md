@@ -59,10 +59,6 @@ Follow these steps to set up and run the project locally:
 
 - **Web Browser** (e.g., Google Chrome, Firefox, etc.)
 - **Code Editor** (e.g., Visual Studio Code)
-![image](https://github.com/user-attachments/assets/09c54837-95c3-40f9-9ad6-93e59324fca0)
-![image](https://github.com/user-attachments/assets/5ee60603-dd82-46bf-9903-60cc30677dfc)
-![image](https://github.com/user-attachments/assets/1cc211e4-c2d4-4580-8d31-8d09e7b72c02)
-![image](https://github.com/user-attachments/assets/6c75e92d-a625-4afc-b234-3f1d8a6343c8)
 
 
 
