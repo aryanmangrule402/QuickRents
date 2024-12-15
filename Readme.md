@@ -80,5 +80,6 @@ Follow these steps to set up and run the project locally:
    ```bash
    git clone https://github.com/aryanmangrule402/QuickRent.git
    https://aryanmangrule402.github.io/QuickRents/
-  
-   
+1. **Website*:
+ ```bash
+ https://aryanmangrule402.github.io/QuickRents/
