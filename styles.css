@@ -1,0 +1,739 @@
+/* General Styles */
+/*Aryan Mangrule*/
+  
+body {
+    font-family: "Ubuntu", serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Navbar Links - Default State */
+.navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 1.2em;
+    position: relative;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Bounce Animation on Hover */
+.navbar a:hover {
+    transform: translateY(-10px); /* Bounces upward */
+    color: #FF6347; /* Change to a vibrant color */
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Keyframes for Bounce Effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Border Animation Effect */
+.navbar a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #FF6347; /* Vibrant border color */
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navbar a:hover::before {
+    width: 100%; /* Expands the border on hover */
+}
+
+/* Text Flip Animation on Hover */
+.navbar a span {
+    display: inline-block;
+    transition: transform 0.6s;
+}
+
+.navbar a:hover span {
+    transform: rotateX(360deg); /* Full flip effect */
+}
+
+/* Click Effect */
+.navbar a:active {
+    transform: scale(0.9) rotateZ(-5deg); /* Slight skew and shrink */
+    background: rgba(255, 99, 71, 0.2); /* Add a subtle background color */
+    border-radius: 5px;
+}
+
+
+
+.hero {
+    text-align: left;
+    padding: 50px 20px;
+    
+    background: url('images/img1.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+/* Menu button (hamburger icon) */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Hide the links by default on small screens */
+    .menu {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust based on your header's height */
+        right: 0;
+        width: 100%;
+        background-color: #2c3e50;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Show the menu button (hamburger) */
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* Show the menu when toggled */
+.menu.show {
+    display: flex; /* Show the menu links when the button is clicked */
+}
+
+.menu a {
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #34495e;
+    border-radius: 5px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+.hero button {
+    padding: 15px 30px;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background-color: #c0392b;
+}
+.features {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 0 0 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card img {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.feature-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 10px;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover img {
+    transform: scale(1.2);
+}
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: #0056b3;
+}
+
+/* Style for the <h2> tag */
+.gadgets h2 {
+    font-size: 2rem; /* Size of the heading */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Space below the heading */
+    font-family: 'Poppins', sans-serif; /* Choose a font */
+}
+
+/* Style for the "List Your Gadget" button */
+/* Style for the "List Your Gadget" button */
+button#listGadgetBtn {
+    display: inline-block;
+    background-color: #2c3e50; /* Blue background */
+    color: white; /* White text */
+    padding: 12px 25px; /* Padding around the button */
+    font-size: 1.1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the button */
+    align-self: center; /* Align button in the center of the flex container */
+    margin-left: auto;
+    margin-right: auto; /* Horizontal centering */
+}
+
+/* Hover effect for the button */
+button#listGadgetBtn:hover {
+    background-color: #FF6347;/* Darker blue when hovered */
+}
+
+/* If you need the button to be in the center of the parent container */
+section.gadgets {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally centers all content in the section */
+    justify-content: center; /* Vertically centers the content */
+}
+/* Style for the Rent button */
+
+
+.gadgets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gadget-card {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gadget-card:hover {
+    transform: scale(1.05);
+}
+
+.gadget-card img {
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+}
+
+.gadget-card h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.gadget-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+#gadgetBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1d72b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#gadgetBtn:hover {
+    background-color: #155a8a;
+}
+
+.gadgets button {
+    padding: 10px 20px;
+    background-color:#2c3e50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.gadgets button:hover {
+    background-color: #FF6347;
+}.rent-btn {
+    background-color: #2c3e50; /* Dark yellow background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Hover effect for Rent button */
+.rent-btn:hover {
+    background-color: #FF6347; /* Darker yellow when hovered */
+}
+
+/* Style for the Add to Cart button */
+
+.add-cart-btn:hover {
+    background-color: #45a049; /* Slightly darker green when hovered */
+}
+
+/* Style for the cart icon */
+.add-cart-btn i {
+    font-size: 1.2rem;
+}
+/* Style for the rating stars */
+.rating {
+    color: #FFD700; /* Gold color for the stars */
+    font-size: 1.2rem; /* Slightly larger stars */
+    margin-top: 5px;
+}
+
+/* Optional: Style for the stars when the rating is different */
+.fas.fa-star {
+    color: #FFD700; /* Full star (gold) */
+}
+
+.fas.fa-star-half-alt {
+    color: #FFBF00; /* Half-star */
+}
+
+.far.fa-star {
+    color: #ccc; /* Empty star (gray) */
+}
+
+
+/* General Styles */
+.contact {
+    padding: 50px 20px;
+    background: #f4f4f4;
+    color: #333;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Form Styles */
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-group label {
+    background: #fda085;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+button {
+    background: #fda085;
+    color: #fff;
+    font-size: 1em;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #f6d365;
+}
+/* Signup Section */
+.signup {
+    padding: 50px 20px;
+    background: #2c3e50;
+    color: #333;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+.signup h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.signup p {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+#signupForm {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(249, 195, 20, 0.018);
+}
+
+.signup .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-color:#fda085;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.signup .form-group label {
+    background: #fda085;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+}
+
+.signup .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.signup .form-group input::placeholder {
+    color: #aaa;
+}
+
+.signup button {
+    background: #fda085;
+    color: #fff;
+    font-size: 1em;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.signup button:hover {
+    background: #74ebd5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #signupForm {
+        padding: 15px 20px;
+    }
+
+    .signup .form-group {
+        flex-direction: column;
+    }
+
+    .signup .form-group label {
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #contactForm {
+        padding: 15px 20px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group label {
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+    }
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+/* Loading Animation */
+#loadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader h1 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    animation: fadeIn 1.5s ease-in-out infinite;
+}
+
+.loader .spinner {
+    width: 80px;
+    height: 80px;
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    border-top: 10px solid #FFD700;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+.loader .dots {
+    display: flex;
+    gap: 5px;
+}
+
+.loader .dots div {
+    width: 15px;
+    height: 15px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+.loader .dots div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loader .dots div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader .dots div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Keyframes */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeIn {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Hide Loading Screen */
+body.loaded #loadingScreen {
+    display: none;
+}
+#office-location {
+    text-align: center;
+    padding: 50px;
+}
+
+#office-location h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#office-location p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
