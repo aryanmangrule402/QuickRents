@@ -76,6 +76,9 @@ Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository**:
    Open your terminal or command prompt and run the following command:
-
+ 
    ```bash
    git clone https://github.com/aryanmangrule402/QuickRent.git
+   https://aryanmangrule402.github.io/QuickRents/
+  
+   
